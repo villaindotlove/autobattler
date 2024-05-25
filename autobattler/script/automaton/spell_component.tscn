@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://x6jc7ssxss70"]
+
+[ext_resource type="Script" path="res://script/automaton/SpellComponent.gd" id="1_0w7qb"]
+[ext_resource type="PackedScene" uid="uid://cxg66htuihsya" path="res://particle/particles_test.tscn" id="2_2l348"]
+[ext_resource type="PackedScene" uid="uid://dmsl15x04potu" path="res://spell_hitbox.tscn" id="3_3bp6j"]
+
+[node name="SpellComponent" type="Node"]
+script = ExtResource("1_0w7qb")
+ParticleEffect = ExtResource("2_2l348")
+Hitbox = ExtResource("3_3bp6j")
+Damage = 20

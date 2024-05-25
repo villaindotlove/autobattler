@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://drvdx7nb727rf"]
+
+[ext_resource type="Script" path="res://script/automaton/MonsterMesh.gd" id="1_uvc6b"]
+[ext_resource type="ArrayMesh" uid="uid://b86e5xo3opf2x" path="res://models/hose_snake/mesh/hose_snake_Cube.res" id="2_uck1e"]
+[ext_resource type="Animation" uid="uid://tbfanxa60kf0" path="res://models/hose_snake/animation/attack.res" id="3_kbsv3"]
+[ext_resource type="Animation" uid="uid://bpdirxsi4f737" path="res://models/hose_snake/animation/ArmatureAction_002.res" id="4_35cj0"]
+
+[sub_resource type="Skin" id="Skin_y1tva"]
+resource_name = "Skin"
+bind_count = 8
+bind/0/name = &"Bone"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 2.38408e-07, -2.22611e-09, 2.22045e-16, 0.00933696, 0.999956, 2.38419e-07, -0.999956, 0.00933696, -1.05706e-09, 0.474825, 0.00443362)
+bind/1/name = &"Bone.001"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 8.21565e-15, 7.10543e-14, 1, -7.45058e-08, -6.66134e-16, 0, 1, 0, -0.00443381, 0)
+bind/2/name = &"Bone.003"
+bind/2/bone = -1
+bind/2/pose = Transform3D(1, 0, 0, 7.10543e-14, 1, -7.45058e-08, 7.54952e-15, 0, 1, 0, -0.591628, 0)
+bind/3/name = &"Bone.002"
+bind/3/bone = -1
+bind/3/pose = Transform3D(1, 0, -2.38419e-07, 7.10543e-14, 1, -7.45058e-08, 2.38419e-07, 0, 1, 0, -0.912557, 0)
+bind/4/name = &"Bone.004"
+bind/4/bone = -1
+bind/4/pose = Transform3D(1, 0, 0, 7.10543e-14, 1, -7.45058e-08, 1.42109e-14, 0, 1, 0, -1.2281, 0)
+bind/5/name = &"Bone.005"
+bind/5/bone = -1
+bind/5/pose = Transform3D(1, 0, 0, 7.10543e-14, 1, -7.45058e-08, 1.42109e-14, 0, 1, 0, -1.51642, 0)
+bind/6/name = &"Bone.006"
+bind/6/bone = -1
+bind/6/pose = Transform3D(0.998731, -0.0503721, 1.10281e-07, 0.0503721, 0.99873, -7.44112e-08, -1.06393e-07, 5.36603e-09, 1, 0.177954, -1.77725, -1.89571e-08)
+bind/7/name = &"Bone.007"
+bind/7/bone = -1
+bind/7/pose = Transform3D(0.998102, 0.0615896, -2.40973e-07, -0.0615896, 0.998101, -7.43643e-08, 2.35935e-07, 1.45588e-08, 1, -0.197754, -1.7726, -4.67459e-08)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h8na3"]
+_data = {
+"attack": ExtResource("3_kbsv3"),
+"idle": ExtResource("4_35cj0")
+}
+
+[node name="MonsterMesh" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_uvc6b")
+
+[node name="Armature" type="Node3D" parent="."]
+
+[node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
+bones/0/name = "Bone"
+bones/0/parent = -1
+bones/0/rest = Transform3D(1, 2.13163e-14, 2.38419e-07, 2.38408e-07, 0.00933683, -0.999956, -2.22609e-09, 0.999956, 0.00933683, 0, 0, -0.474846)
+bones/0/enabled = true
+bones/0/position = Vector3(0, 0, -0.474846)
+bones/0/rotation = Quaternion(0.703798, 8.46863e-08, 8.38993e-08, 0.7104)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/name = "Bone.001"
+bones/1/parent = 0
+bones/1/rest = Transform3D(1, 2.38408e-07, -2.22611e-09, 2.84217e-14, 0.00933683, 0.999956, 2.38419e-07, -0.999956, 0.00933683, 0, 0.474866, 0)
+bones/1/enabled = true
+bones/1/position = Vector3(0, 0.474866, 0)
+bones/1/rotation = Quaternion(-0.693705, 0.118767, 0.119881, 0.700212)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/name = "Bone.003"
+bones/2/parent = 1
+bones/2/rest = Transform3D(1, -2.81241e-22, 8.21565e-15, 2.81241e-22, 1, 1.15529e-36, -8.21565e-15, 1.15529e-36, 1, 0, 0.587194, 0)
+bones/2/enabled = true
+bones/2/position = Vector3(0, 0.587194, 0)
+bones/2/rotation = Quaternion(-1.35731e-07, 1.58896e-09, 0.304608, 0.952478)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/name = "Bone.002"
+bones/3/parent = 2
+bones/3/rest = Transform3D(1, -2.5411e-21, 2.38419e-07, 2.5411e-21, 1, 8.47033e-21, -2.38419e-07, -8.47033e-21, 1, 0, 0.320929, 0)
+bones/3/enabled = true
+bones/3/position = Vector3(0, 0.320929, 0)
+bones/3/rotation = Quaternion(-1.36469e-07, 1.10048e-07, 0.241824, 0.97032)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/name = "Bone.004"
+bones/4/parent = 3
+bones/4/rest = Transform3D(1, -5.29396e-22, -2.38419e-07, 5.29396e-22, 1, -6.31089e-29, 2.38419e-07, -6.31089e-29, 1, 0, 0.315543, 0)
+bones/4/enabled = true
+bones/4/position = Vector3(0, 0.315543, 0)
+bones/4/rotation = Quaternion(-7.42117e-08, -1.20092e-07, 0.134167, 0.990959)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/name = "Bone.005"
+bones/5/parent = 4
+bones/5/rest = Transform3D(1, -5.29396e-22, 0, 5.29396e-22, 1, 0, 0, 0, 1, 0, 0.28832, 0)
+bones/5/enabled = true
+bones/5/position = Vector3(0, 0.28832, 0)
+bones/5/rotation = Quaternion(4.9738e-15, -2.60532e-14, -1.73848e-09, 1)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/name = "Bone.006"
+bones/6/parent = 5
+bones/6/rest = Transform3D(0.998731, 0.0503721, -1.06393e-07, -0.0503721, 0.998731, 5.36603e-09, 1.06528e-07, -2.22045e-16, 1, -0.0882047, 0.267535, -1.25346e-15)
+bones/6/enabled = true
+bones/6/position = Vector3(-0.0736364, 0.263488, 1.81301e-08)
+bones/6/rotation = Quaternion(4.92833e-07, -3.36669e-07, -0.14957, 0.988751)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/name = "Bone.007"
+bones/7/parent = 5
+bones/7/rest = Transform3D(0.998101, -0.0615896, 2.35935e-07, 0.0615896, 0.998102, 1.45588e-08, -2.36384e-07, 1.33227e-15, 1, 0.0882047, 0.264998, 1.25346e-15)
+bones/7/enabled = true
+bones/7/position = Vector3(0.0797904, 0.251498, -3.69904e-08)
+bones/7/rotation = Quaternion(-5.00313e-07, -2.61381e-09, 0.104594, 0.994515)
+bones/7/scale = Vector3(1, 1, 1)
+
+[node name="Cube" type="MeshInstance3D" parent="Armature/Skeleton3D"]
+mesh = ExtResource("2_uck1e")
+skin = SubResource("Skin_y1tva")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h8na3")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

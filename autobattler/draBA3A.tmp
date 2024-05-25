@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr430xnai7fa2"]
+
+[ext_resource type="Script" path="res://dragable.gd" id="1_1hjvy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t44x6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekrhk"]
+albedo_color = Color(1, 0.419608, 0.592157, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqqj6"]
+
+[node name="dragable" type="Node3D"]
+script = ExtResource("1_1hjvy")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_t44x6")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekrhk")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_xqqj6")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

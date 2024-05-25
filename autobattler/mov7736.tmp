@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://0q6v4cqts8je"]
+
+[ext_resource type="Script" path="res://MovementComponent.gd" id="1_gmjtu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xvyf2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b1vg"]
+albedo_color = Color(0.12549, 1, 1, 1)
+
+[node name="MovementComponent" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_xvyf2")
+surface_material_override/0 = SubResource("StandardMaterial3D_8b1vg")
+script = ExtResource("1_gmjtu")

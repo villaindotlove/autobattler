@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://bwgfgxmgbodb5"]
+
+[ext_resource type="Script" path="res://Automaton.gd" id="1_cdycx"]
+[ext_resource type="PackedScene" uid="uid://0q6v4cqts8je" path="res://movement_component.tscn" id="2_5mtnx"]
+[ext_resource type="PackedScene" uid="uid://x6jc7ssxss70" path="res://spell_component.tscn" id="2_7g23a"]
+[ext_resource type="PackedScene" uid="uid://cr430xnai7fa2" path="res://dragable_component.tscn" id="3_wjem3"]
+[ext_resource type="PackedScene" uid="uid://drvdx7nb727rf" path="res://monster_mesh.tscn" id="5_2wibo"]
+[ext_resource type="Script" path="res://AutoClock.gd" id="6_vwe3e"]
+[ext_resource type="Texture2D" uid="uid://w7lyiijri2xb" path="res://UI/hp_over.png" id="6_yibr6"]
+[ext_resource type="Texture2D" uid="uid://cqi4guy5g67v8" path="res://UI/hp_prog.png" id="7_28ygs"]
+[ext_resource type="Script" path="res://hp_bar_test.gd" id="8_cxrwd"]
+[ext_resource type="Texture2D" uid="uid://bqfyh3vthijpj" path="res://UI/mana_progt.png" id="9_78erk"]
+[ext_resource type="Script" path="res://mana_bar_test.gd" id="11_3ofa6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ec7p5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yruud"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Automaton" type="Node3D"]
+script = ExtResource("1_cdycx")
+SpellComponent = ExtResource("2_7g23a")
+
+[node name="MovementComponent" parent="." instance=ExtResource("2_5mtnx")]
+
+[node name="DragableComponent" parent="." instance=ExtResource("3_wjem3")]
+
+[node name="Clock" type="Timer" parent="."]
+script = ExtResource("6_vwe3e")
+
+[node name="ControlTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LockTimer" type="Timer" parent="."]
+
+[node name="MonsterMesh" parent="." instance=ExtResource("5_2wibo")]
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_ec7p5")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(180, 80)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+value = 100.0
+texture_over = ExtResource("6_yibr6")
+texture_progress = ExtResource("7_28ygs")
+script = ExtResource("8_cxrwd")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="SubViewport/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 20.0
+texture_over = ExtResource("6_yibr6")
+texture_progress = ExtResource("9_78erk")
+script = ExtResource("11_3ofa6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0549028, 1.3192, -0.148109)
+billboard = 1
+texture = SubResource("ViewportTexture_yruud")
+
+[connection signal="hp_changed" from="." to="SubViewport/VBoxContainer/TextureProgressBar" method="_on_automaton_hp_changed"]
+[connection signal="mana_changed" from="." to="SubViewport/VBoxContainer/TextureProgressBar2" method="_on_automaton_mana_changed"]

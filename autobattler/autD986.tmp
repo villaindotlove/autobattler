@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwgfgxmgbodb5"]
+
+[ext_resource type="Script" path="res://Automaton.gd" id="1_cdycx"]
+[ext_resource type="PackedScene" uid="uid://0q6v4cqts8je" path="res://movement_component.tscn" id="2_5mtnx"]
+[ext_resource type="PackedScene" uid="uid://cr430xnai7fa2" path="res://dragable_component.tscn" id="3_wjem3"]
+[ext_resource type="PackedScene" uid="uid://drvdx7nb727rf" path="res://monster_mesh.tscn" id="5_2wibo"]
+[ext_resource type="Script" path="res://AutoClock.gd" id="6_vwe3e"]
+
+[node name="Automaton" type="Node3D"]
+script = ExtResource("1_cdycx")
+
+[node name="MovementComponent" parent="." instance=ExtResource("2_5mtnx")]
+
+[node name="DragableComponent" parent="." instance=ExtResource("3_wjem3")]
+
+[node name="Clock" type="Timer" parent="."]
+script = ExtResource("6_vwe3e")
+
+[node name="ControlTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LockTimer" type="Timer" parent="."]
+
+[node name="MonsterMesh" parent="." instance=ExtResource("5_2wibo")]
