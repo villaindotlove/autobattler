@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://lbi5gcrntcyf"
+path="res://.godot/imported/smooth_icosphere.obj-c2c4909be63e3fb56b8597260522be18.mesh"
+
+[deps]
+
+files=["res://.godot/imported/smooth_icosphere.obj-c2c4909be63e3fb56b8597260522be18.mesh"]
+
+source_file="res://models/shape/smooth_icosphere.obj"
+dest_files=["res://.godot/imported/smooth_icosphere.obj-c2c4909be63e3fb56b8597260522be18.mesh", "res://.godot/imported/smooth_icosphere.obj-c2c4909be63e3fb56b8597260522be18.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

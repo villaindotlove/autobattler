@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://capi02rktd055"]
+
+[sub_resource type="Gradient" id="Gradient_0ilna"]
+offsets = PackedFloat32Array(0, 0.200535, 0.628342, 0.834225, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 0, 1, 0.969943, 0.15173, 0, 1, 0.501372, 0.269353, 4.33177e-07, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c5x2v"]
+gradient = SubResource("Gradient_0ilna")
+
+[sub_resource type="Curve" id="Curve_lhe5i"]
+max_value = 5.0
+_data = [Vector2(0, 1.84211), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_42lxl"]
+curve = SubResource("Curve_lhe5i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b06yn"]
+emission_shape = 2
+emission_sphere_radius = 5.0
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -16.55
+radial_accel_max = -16.55
+radial_accel_curve = SubResource("CurveTexture_42lxl")
+color_ramp = SubResource("GradientTexture1D_c5x2v")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="Curve" id="Curve_fhoav"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.138824, 1), 2.57237, 2.57237, 0, 0, Vector2(0.296471, 1), -0.699013, -0.699013, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6scbh"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_27shx"]
+material = SubResource("StandardMaterial3D_6scbh")
+shape = 0
+size = 0.1
+sections = 10
+section_length = 0.1
+curve = SubResource("Curve_fhoav")
+
+[node name="PoweringUpParticle" type="GPUParticles3D"]
+transform = Transform3D(0.999911, -0.00384966, 0.0127703, 0.00390554, 0.999983, -0.00435322, -0.0127533, 0.00440273, 0.999909, 0, 0, 0)
+amount = 50
+lifetime = 0.8
+local_coords = true
+transform_align = 3
+trail_enabled = true
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_b06yn")
+draw_pass_1 = SubResource("RibbonTrailMesh_27shx")

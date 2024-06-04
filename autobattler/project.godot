@@ -20,13 +20,20 @@ config/icon="res://icon.svg"
 Pathfinding="*res://global/Pathfinding.gd"
 DragUnit="*res://global/DragUnit.gd"
 BoardReference="*res://global/BoardReference.gd"
-Targeting="*res://global/Targeting.gd"
+SpellTargeting="*res://global/SpellTargeting.gd"
+CsvParse="*res://global/CsvParse.gd"
+DataRepository="*res://global/DataRepository.gd"
+SpellMovement="*res://global/SpellMovement.gd"
 
 [display]
 
 window/size/viewport_width=1080
 window/size/viewport_height=640
 window/stretch/mode="viewport"
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 

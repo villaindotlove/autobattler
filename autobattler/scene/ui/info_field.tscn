@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1bfpq570ngsc"]
+
+[ext_resource type="Script" path="res://script/ui/info_field.gd" id="1_w3cl2"]
+
+[node name="Field" type="HBoxContainer"]
+size_flags_vertical = 0
+script = ExtResource("1_w3cl2")
+FieldName = "Field"
+Value = "Value"
+
+[node name="FieldName" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Field"
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Value"

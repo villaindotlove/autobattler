@@ -1,0 +1,78 @@
+[gd_scene load_steps=15 format=3 uid="uid://bgoh6a1lrox41"]
+
+[ext_resource type="Script" path="res://script/automaton/Automaton.gd" id="1_yspmc"]
+[ext_resource type="PackedScene" uid="uid://0q6v4cqts8je" path="res://scene/automaton/movement_component.tscn" id="3_bybr6"]
+[ext_resource type="PackedScene" uid="uid://cr430xnai7fa2" path="res://scene/ui/dragable_component.tscn" id="4_qbe00"]
+[ext_resource type="Script" path="res://script/automaton/CastingComponent.gd" id="4_t0xe6"]
+[ext_resource type="Resource" uid="uid://q08fhdf8q8vh" path="res://script/spell/resource/snake_proj_test.tres" id="5_f3exb"]
+[ext_resource type="Script" path="res://script/automaton/AutoClock.gd" id="5_nx20e"]
+[ext_resource type="PackedScene" uid="uid://drvdx7nb727rf" path="res://scene/automaton/monster_mesh.tscn" id="6_ecske"]
+[ext_resource type="Texture2D" uid="uid://w7lyiijri2xb" path="res://ui/hp_over.png" id="7_uxivp"]
+[ext_resource type="Texture2D" uid="uid://cqi4guy5g67v8" path="res://ui/hp_prog.png" id="8_4rca0"]
+[ext_resource type="Script" path="res://script/automaton/HpBar.gd" id="9_r1mel"]
+[ext_resource type="Texture2D" uid="uid://bqfyh3vthijpj" path="res://ui/mana_progt.png" id="10_rnq3x"]
+[ext_resource type="Script" path="res://script/automaton/ManaBar.gd" id="11_175bv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ec7p5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yruud"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Automaton" type="Node3D"]
+script = ExtResource("1_yspmc")
+
+[node name="MovementComponent" parent="." instance=ExtResource("3_bybr6")]
+
+[node name="DragableComponent" parent="." instance=ExtResource("4_qbe00")]
+
+[node name="CastingComponent" type="Node" parent="."]
+script = ExtResource("4_t0xe6")
+ActiveSpell = ExtResource("5_f3exb")
+
+[node name="Clock" type="Timer" parent="."]
+script = ExtResource("5_nx20e")
+
+[node name="ControlTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="LockTimer" type="Timer" parent="."]
+
+[node name="MonsterMesh" parent="." instance=ExtResource("6_ecske")]
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("BoxShape3D_ec7p5")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(180, 80)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="SubViewport/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+value = 100.0
+texture_over = ExtResource("7_uxivp")
+texture_progress = ExtResource("8_4rca0")
+script = ExtResource("9_r1mel")
+
+[node name="TextureProgressBar2" type="TextureProgressBar" parent="SubViewport/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+max_value = 20.0
+texture_over = ExtResource("7_uxivp")
+texture_progress = ExtResource("10_rnq3x")
+script = ExtResource("11_175bv")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0549028, 1.3192, -0.148109)
+billboard = 1
+texture = SubResource("ViewportTexture_yruud")
+
+[connection signal="hp_changed" from="." to="SubViewport/VBoxContainer/TextureProgressBar" method="_on_automaton_hp_changed"]
+[connection signal="mana_changed" from="." to="SubViewport/VBoxContainer/TextureProgressBar2" method="_on_automaton_mana_changed"]

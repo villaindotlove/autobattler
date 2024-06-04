@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xh27e6rcffk4"]
+
+[ext_resource type="Script" path="res://script/ui/Slot.gd" id="1_gb7kk"]
+
+[node name="Slot1" type="PanelContainer"]
+custom_minimum_size = Vector2(40, 40)
+script = ExtResource("1_gb7kk")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://byyoa3uqfbojr"]
+
+[ext_resource type="PackedScene" uid="uid://d2fltwscekvt3" path="res://gfx/scene/whirlwind/whirlwind.tscn" id="1_yl3og"]
+
+[sub_resource type="Gradient" id="Gradient_mia3i"]
+offsets = PackedFloat32Array(0, 0.0657277, 0.553991, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yspi5"]
+gradient = SubResource("Gradient_mia3i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r56mn"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 5.0
+emission_ring_radius = 5.0
+emission_ring_inner_radius = 5.0
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, -10, 0)
+initial_velocity_min = 22.39
+initial_velocity_max = 22.39
+radial_accel_min = -82.33
+radial_accel_max = -80.0
+tangential_accel_min = -15.51
+tangential_accel_max = -15.51
+damping_max = 21.642
+color_ramp = SubResource("GradientTexture1D_yspi5")
+
+[sub_resource type="Curve" id="Curve_fhoav"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.138824, 1), 2.57237, 2.57237, 0, 0, Vector2(0.296471, 1), -0.699013, -0.699013, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6scbh"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+proximity_fade_enabled = true
+proximity_fade_distance = 0.0
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_27shx"]
+material = SubResource("StandardMaterial3D_6scbh")
+shape = 0
+size = 0.05
+sections = 10
+section_length = 0.1
+curve = SubResource("Curve_fhoav")
+
+[node name="Whirlwind" type="GPUParticles3D"]
+transform = Transform3D(0.26221, -0.00209082, 0.00325602, 0.00102416, 0.543109, -0.00110993, -0.00334434, 0.0023912, 0.254945, 0.0130538, 0.197687, 0.0450799)
+amount = 5
+lifetime = 0.8
+explosiveness = 0.35
+visibility_aabb = AABB(-11.8303, -4.7065, -10.55, 21.0622, 9.83786, 21.7318)
+transform_align = 3
+trail_enabled = true
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_r56mn")
+draw_pass_1 = SubResource("RibbonTrailMesh_27shx")
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("1_yl3og")]
+transform = Transform3D(4.43767, 3.84171e-09, -5.96046e-08, -3.53612e-09, 2.43517, 2.79397e-09, 7.07805e-08, -4.09782e-08, 4.51651, 0, 0, 0)

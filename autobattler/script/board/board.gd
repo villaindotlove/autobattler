@@ -7,13 +7,14 @@ var Size: Vector2
 var Tiles = { }
 @export var UnitLocations = { }
 
-var _tile_prefab = preload("res://tile.tscn")
+var _tile_prefab = preload("res://scene/board/tile.tscn")
 
 func _start_automatons():
 	for unit in UnitLocations:
 		unit.Clock.start()
 		unit.MovementComponent.move_completed.connect(_move_unit)
 		unit.MovementComponent.assign_closest_target(get_opposition_units(unit.IsEnemy))
+		unit.get_child(1).queue_free()
 
 func get_opposition_units(is_enemy):
 	var opposition_units = []

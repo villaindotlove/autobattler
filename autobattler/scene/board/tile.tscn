@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhvrbq7qxkvgu"]
+
+[ext_resource type="Script" path="res://script/board/tile.gd" id="1_pso80"]
+[ext_resource type="PackedScene" uid="uid://cn8vrpai8cn6w" path="res://scene/ui/droppable_test.tscn" id="2_e1wup"]
+[ext_resource type="Script" path="res://script/board/DragPanel.gd" id="3_53rew"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fpb1m"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_txgdl"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Tile" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_fpb1m")
+script = ExtResource("1_pso80")
+
+[node name="Platform" parent="." instance=ExtResource("2_e1wup")]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(100, 100)
+
+[node name="DragPanel" type="Panel" parent="SubViewport"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_53rew")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0518066, 0)
+axis = 1
+texture = SubResource("ViewportTexture_txgdl")

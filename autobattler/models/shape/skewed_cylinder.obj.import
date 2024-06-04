@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0sv20qthvbdf"
+path="res://.godot/imported/skewed_cylinder.obj-0d4706ee08779cc84bef141a7447c5b4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/skewed_cylinder.obj-0d4706ee08779cc84bef141a7447c5b4.mesh"]
+
+source_file="res://models/shape/skewed_cylinder.obj"
+dest_files=["res://.godot/imported/skewed_cylinder.obj-0d4706ee08779cc84bef141a7447c5b4.mesh", "res://.godot/imported/skewed_cylinder.obj-0d4706ee08779cc84bef141a7447c5b4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

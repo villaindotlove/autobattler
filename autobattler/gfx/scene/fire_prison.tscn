@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://bh7aabbsfn3ld"]
+
+[ext_resource type="Script" path="res://gfx/RunicPillar.gd" id="1_rw0dh"]
+[ext_resource type="Shader" uid="uid://c7m6m154435fn" path="res://gfx/shader/runic_ring.tres" id="2_5i14w"]
+[ext_resource type="ArrayMesh" uid="uid://bb7gwvi5uyy5h" path="res://models/shape/cylinder.obj" id="3_f2rpg"]
+[ext_resource type="Shader" uid="uid://dqp65dtmuuwiv" path="res://gfx/shader/low_poly_pillar.tres" id="4_uflfm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_yeai0"]
+uv2_padding = 0.0
+size = Vector2(1.3, 1.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pabt1"]
+render_priority = 0
+shader = ExtResource("2_5i14w")
+shader_parameter/RingColour = Color(3, 0.3, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sabu8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j558l"]
+seamless = true
+noise = SubResource("FastNoiseLite_sabu8")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iqdnp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7ig1g"]
+seamless = true
+noise = SubResource("FastNoiseLite_iqdnp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ic4se"]
+render_priority = 0
+shader = ExtResource("4_uflfm")
+shader_parameter/PillarColour = Color(3, 0.5, 0, 1)
+shader_parameter/SecondaryPanning = Vector2(0.2, 0.5)
+shader_parameter/PrimaryPanning = Vector2(1, 1)
+shader_parameter/SecondaryTexture = SubResource("NoiseTexture2D_7ig1g")
+shader_parameter/PrimaryTexture = SubResource("NoiseTexture2D_j558l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3o1hx"]
+render_priority = 0
+shader = ExtResource("2_5i14w")
+shader_parameter/RingColour = Color(3, 0.3, 0, 1)
+
+[node name="RunicPillar" type="Node3D"]
+script = ExtResource("1_rw0dh")
+
+[node name="UpperRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.71606, 0)
+mesh = SubResource("QuadMesh_yeai0")
+surface_material_override/0 = SubResource("ShaderMaterial_pabt1")
+
+[node name="Pillar" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.517407, 0, 0, 0, 0.759421, 0, 0, 0, 0.517407, 0, 0.811243, 0)
+mesh = ExtResource("3_f2rpg")
+surface_material_override/0 = SubResource("ShaderMaterial_ic4se")
+
+[node name="LowerRing" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0021, 0, 0, 0, -4.38031e-08, 1.0021, 0, -1.0021, -4.38031e-08, 0, -0.0174581, 0)
+mesh = SubResource("QuadMesh_yeai0")
+surface_material_override/0 = SubResource("ShaderMaterial_3o1hx")

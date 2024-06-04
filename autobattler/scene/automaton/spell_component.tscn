@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://x6jc7ssxss70"]
+
+[ext_resource type="Script" path="res://script/automaton/CastingComponent.gd" id="1_h2c1x"]
+
+[node name="SpellComponent" type="Node"]
+script = ExtResource("1_h2c1x")

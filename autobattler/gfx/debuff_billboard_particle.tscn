@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh5nmytwub5k7"]
+
+[ext_resource type="Texture2D" uid="uid://dx5xyixh62rgv" path="res://gfx/texture/shine.png" id="1_qwdv7"]
+
+[sub_resource type="Gradient" id="Gradient_u4oel"]
+offsets = PackedFloat32Array(0, 0.159624, 0.323944, 0.478873, 0.624413, 0.816901, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.230315, 0.230315, 0.230315, 1, 1, 1, 1, 1, 0.370258, 0.370258, 0.370258, 1, 0.8578, 0.8578, 0.8578, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5k12v"]
+gradient = SubResource("Gradient_u4oel")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nnuhe"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 1.0
+particle_flag_rotate_y = true
+direction = Vector3(0, -1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 0.5
+angle_min = -193.4
+angle_max = 214.9
+scale_min = 0.3
+scale_max = 0.7
+color = Color(0.956863, 0.952941, 0.215686, 0.713726)
+color_ramp = SubResource("GradientTexture1D_5k12v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sc8d6"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_qwdv7")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_n7xx7"]
+material = SubResource("StandardMaterial3D_sc8d6")
+
+[node name="DebuffBillboardParticle" type="GPUParticles3D"]
+lifetime = 0.68
+process_material = SubResource("ParticleProcessMaterial_nnuhe")
+draw_pass_1 = SubResource("QuadMesh_n7xx7")

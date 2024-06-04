@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=4 format=3 uid="uid://q08fhdf8q8vh"]
+
+[ext_resource type="Resource" uid="uid://4mt2qci3f8tw" path="res://script/spell/resource/snake_whirlpool_test.tres" id="1_1h3kp"]
+[ext_resource type="Script" path="res://script/spell/resource/Spell.gd" id="1_nnrou"]
+[ext_resource type="PackedScene" uid="uid://ca2xai44eha0d" path="res://scene/projectiles/spell/snake_spell1_particle.tscn" id="1_yahph"]
+
+[resource]
+script = ExtResource("1_nnrou")
+Cost = 0
+Damage = 10
+Healing = 0
+MissileSpeed = 10.0
+Pierce = 0
+Buffs = []
+Debuffs = []
+OnHitProc = ExtResource("1_1h3kp")
+Duration = 0.0
+TargetingFunction = 0
+MovementFunction = 1
+Particle = ExtResource("1_yahph")
