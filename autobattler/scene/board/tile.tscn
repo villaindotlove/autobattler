@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhvrbq7qxkvgu"]
 
-[ext_resource type="Script" path="res://script/board/tile.gd" id="1_pso80"]
-[ext_resource type="PackedScene" uid="uid://cn8vrpai8cn6w" path="res://scene/ui/droppable_test.tscn" id="2_e1wup"]
-[ext_resource type="Script" path="res://script/board/DragPanel.gd" id="3_53rew"]
+[ext_resource type="Script" path="res://scene/board/tile.gd" id="1_pso80"]
+[ext_resource type="PackedScene" uid="uid://cn8vrpai8cn6w" path="res://scene/ui/drag_3d_units/drop_platform.tscn" id="2_e1wup"]
+[ext_resource type="Script" path="res://scene/board/DragPanel.gd" id="3_53rew"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fpb1m"]
 size = Vector3(1, 0.1, 1)

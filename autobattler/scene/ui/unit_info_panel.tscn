@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://rotating_obj.gd" id="1_chyhi"]
 [ext_resource type="PackedScene" uid="uid://c1bfpq570ngsc" path="res://scene/ui/info_field.tscn" id="2_suwti"]
-[ext_resource type="Texture2D" uid="uid://cyw3l12o8grdo" path="res://ui/icons/snake_ico.png" id="3_dknwk"]
+[ext_resource type="Texture2D" uid="uid://cyw3l12o8grdo" path="res://ui_sprites/icons/snake_ico.png" id="3_oprdc"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_5082n"]
 
@@ -149,7 +149,7 @@ size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("3_dknwk")
+texture = ExtResource("3_oprdc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
 layout_mode = 2

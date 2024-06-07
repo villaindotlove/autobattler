@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://0q6v4cqts8je"]
-
-[ext_resource type="Script" path="res://script/automaton/MovementComponent.gd" id="1_gmjtu"]
-
-[node name="MoveComponent" type="Node3D"]
-script = ExtResource("1_gmjtu")

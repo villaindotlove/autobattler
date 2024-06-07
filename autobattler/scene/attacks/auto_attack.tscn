@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmv0denmjo50u"]
+
+[ext_resource type="Script" path="res://scene/attacks/AutoAttack.gd" id="1_x2f0p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ht5jx"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="AutoAttack" type="Node3D"]
+script = ExtResource("1_x2f0p")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_ht5jx")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_collision_enter"]

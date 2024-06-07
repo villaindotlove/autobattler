@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://gfx/scene/whirlwind/whirlwind.gd" id="1_f31x7"]
 [ext_resource type="ArrayMesh" uid="uid://4dfuurrmelr" path="res://models/shape/tornado.obj" id="2_beya7"]
-[ext_resource type="Shader" uid="uid://dqp65dtmuuwiv" path="res://gfx/shader/low_poly_pillar.tres" id="3_6g7nq"]
+[ext_resource type="Shader" uid="uid://dqp65dtmuuwiv" path="res://material/spell_shaders/low_poly_pillar.tres" id="3_fklno"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ptden"]
 
@@ -18,7 +18,7 @@ noise = SubResource("FastNoiseLite_xl0mt")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbam2"]
 render_priority = 0
-shader = ExtResource("3_6g7nq")
+shader = ExtResource("3_fklno")
 shader_parameter/PillarColour = Color(0, 0.47451, 0.886275, 1)
 shader_parameter/SecondaryPanning = Vector2(0.95, -0.495)
 shader_parameter/PrimaryPanning = Vector2(3.28, -0.875)

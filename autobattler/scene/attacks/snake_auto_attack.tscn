@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c15femrcvavku"]
+
+[ext_resource type="PackedScene" uid="uid://cmv0denmjo50u" path="res://scene/attacks/auto_attack.tscn" id="1_bsbw4"]
+[ext_resource type="PackedScene" uid="uid://d2fltwscekvt3" path="res://gfx/scene/whirlwind/whirlwind.tscn" id="2_new0h"]
+
+[node name="AutoAttack" instance=ExtResource("1_bsbw4")]
+
+[node name="Whirlwind" parent="." index="1" instance=ExtResource("2_new0h")]
+Colour = Color(0, 0.47451, 0.886275, 1)
+PrimaryPanSpeed = Vector2(3.28, -0.875)
+SecondaryPanSpeed = Vector2(0.95, -0.495)

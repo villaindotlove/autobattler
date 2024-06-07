@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr430xnai7fa2"]
+
+[ext_resource type="Script" path="res://scene/ui/drag_3d_units/DragableComponent.gd" id="1_5rn3s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xqqj6"]
+size = Vector3(1, 1.5, 1)
+
+[node name="DragableComponent" type="Node3D"]
+script = ExtResource("1_5rn3s")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.264593, 0)
+shape = SubResource("BoxShape3D_xqqj6")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

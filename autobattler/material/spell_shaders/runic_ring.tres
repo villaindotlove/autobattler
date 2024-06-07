@@ -1,0 +1,57 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://c7m6m154435fn"]
+
+[ext_resource type="Texture2D" uid="uid://dsu5jqdryv4yn" path="res://gfx/texture/rings_runes.png" id="1_ep01i"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ndmg8"]
+texture = ExtResource("1_ep01i")
+
+[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_asiys"]
+default_input_values = [0, 0.2, 1, 1.0, 2, 0.5]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_ohc45"]
+parameter_name = "RingColour"
+default_value_enabled = true
+default_value = Color(3, 0.3, 0, 1)
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_add, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_disabled, unshaded;
+
+uniform vec4 RingColour : source_color = vec4(3.000000, 0.300000, 0.000000, 1.000000);
+uniform sampler2D tex_frg_4;
+
+
+
+void fragment() {
+// ColorParameter:6
+	vec4 n_out6p0 = RingColour;
+
+
+// Texture2D:4
+	vec4 n_out4p0 = texture(tex_frg_4, UV);
+
+
+// SmoothStep:5
+	float n_in5p0 = 0.20000;
+	float n_in5p1 = 1.00000;
+	float n_out5p0 = smoothstep(n_in5p0, n_in5p1, n_out4p0.x);
+
+
+// Output:0
+	ALBEDO = vec3(n_out6p0.xyz);
+	ALPHA = n_out5p0;
+
+
+}
+"
+modes/blend = 1
+modes/cull = 2
+modes/specular = 2
+flags/unshaded = true
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_ndmg8")
+nodes/fragment/4/position = Vector2(-323.276, 318.619)
+nodes/fragment/5/node = SubResource("VisualShaderNodeSmoothStep_asiys")
+nodes/fragment/5/position = Vector2(40, 260)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorParameter_ohc45")
+nodes/fragment/6/position = Vector2(40, 20)
+nodes/fragment/connections = PackedInt32Array(5, 0, 0, 1, 4, 0, 5, 2, 6, 0, 0, 0)

@@ -2,15 +2,12 @@
 
 [ext_resource type="Script" path="res://test.gd" id="1_qjrso"]
 [ext_resource type="PackedScene" uid="uid://bgoh6a1lrox41" path="res://scene/automaton/automaton.tscn" id="2_1587d"]
-[ext_resource type="PackedScene" uid="uid://blcf5gi0vvcvy" path="res://scene/ui/inventory.tscn" id="2_lehd2"]
 [ext_resource type="PackedScene" uid="uid://c15femrcvavku" path="res://scene/projectiles/attack/snake_auto_attack.tscn" id="4_unhrp"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sbaxd"]
 
 [node name="Test" type="Node3D"]
 script = ExtResource("1_qjrso")
-
-[node name="Inventory" parent="." instance=ExtResource("2_lehd2")]
 
 [node name="Automaton" parent="." instance=ExtResource("2_1587d")]
 IsEnemy = true

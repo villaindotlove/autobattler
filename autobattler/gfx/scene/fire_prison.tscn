@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://bh7aabbsfn3ld"]
 
 [ext_resource type="Script" path="res://gfx/RunicPillar.gd" id="1_rw0dh"]
-[ext_resource type="Shader" uid="uid://c7m6m154435fn" path="res://gfx/shader/runic_ring.tres" id="2_5i14w"]
+[ext_resource type="Shader" uid="uid://c7m6m154435fn" path="res://material/spell_shaders/runic_ring.tres" id="2_5i14w"]
 [ext_resource type="ArrayMesh" uid="uid://bb7gwvi5uyy5h" path="res://models/shape/cylinder.obj" id="3_f2rpg"]
-[ext_resource type="Shader" uid="uid://dqp65dtmuuwiv" path="res://gfx/shader/low_poly_pillar.tres" id="4_uflfm"]
+[ext_resource type="Shader" uid="uid://dqp65dtmuuwiv" path="res://material/spell_shaders/low_poly_pillar.tres" id="4_uflfm"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_yeai0"]
 uv2_padding = 0.0

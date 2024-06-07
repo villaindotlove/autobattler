@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqm5da5opj1cq"]
 
 [ext_resource type="ArrayMesh" uid="uid://cday0j06fb7hm" path="res://models/shape/whirlpool.obj" id="1_1xsvu"]
-[ext_resource type="Shader" uid="uid://car67f084dmd7" path="res://gfx/shader/water_spout.tres" id="2_g3yr1"]
+[ext_resource type="Shader" uid="uid://car67f084dmd7" path="res://material/spell_shaders/water_spout.tres" id="2_5ycp1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ebndu"]
 render_priority = 0
-shader = ExtResource("2_g3yr1")
+shader = ExtResource("2_5ycp1")
 shader_parameter/Colour = Color(0, 0.439216, 0.552941, 1)
 shader_parameter/HighlightPanning = Vector2(-0.2, -0.2)
 shader_parameter/WaterTexturePanning = Vector2(-0.5, -0.3)
