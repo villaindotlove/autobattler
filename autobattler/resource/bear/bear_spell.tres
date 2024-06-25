@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://de55h7m0h7l10"]
+
+[ext_resource type="Script" path="res://resource/Spell.gd" id="1_5yoq3"]
+
+[resource]
+script = ExtResource("1_5yoq3")
+Name = "Mothering Instinct"
+Cost = 0
+Damage = 0
+Healing = 0
+MissileSpeed = 0.0
+Pierce = 0
+Buffs = []
+Debuffs = []
+Duration = 0.0
+TargetingFunction = 2
+MovementFunction = 0
+Description = ""

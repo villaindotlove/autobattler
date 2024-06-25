@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "fePT6A4c8WPn8d8rFF5qIT9cZYCLh8D7wP1AkRhnJlhNEhwu/CNXG8jGUHW4BMALrMbdrP8KAOODYf7ffY4XuA==",
+  "success": true,
+  "projectFilePath": "D:\\gamedev\\autobattler\\autobattler\\Autobattler.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\scote\\.nuget\\packages\\godot.sourcegenerators\\4.2.2\\godot.sourcegenerators.4.2.2.nupkg.sha512",
+    "C:\\Users\\scote\\.nuget\\packages\\godotsharp\\4.2.2\\godotsharp.4.2.2.nupkg.sha512",
+    "C:\\Users\\scote\\.nuget\\packages\\godotsharpeditor\\4.2.2\\godotsharpeditor.4.2.2.nupkg.sha512"
+  ],
+  "logs": []
+}

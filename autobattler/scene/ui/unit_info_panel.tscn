@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqyu0fppyka8w"]
 
-[ext_resource type="Script" path="res://rotating_obj.gd" id="1_chyhi"]
+[ext_resource type="Script" path="res://scene/ui/unit_info_panel.gd" id="1_14p1g"]
+[ext_resource type="Resource" uid="uid://dmfvdtnparuxx" path="res://resource/wise_mage.tres" id="2_ihoqd"]
 [ext_resource type="PackedScene" uid="uid://c1bfpq570ngsc" path="res://scene/ui/info_field.tscn" id="2_suwti"]
 [ext_resource type="Texture2D" uid="uid://cyw3l12o8grdo" path="res://ui_sprites/icons/snake_ico.png" id="3_oprdc"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_5082n"]
 
 [node name="UnitInfoPanel" type="Control"]
 layout_mode = 3
@@ -13,6 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_14p1g")
+unit_resource = ExtResource("2_ihoqd")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -38,23 +39,17 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/MarginContainer2/SubViewportContainer"]
+[node name="ModelViewport" type="SubViewport" parent="HBoxContainer/MarginContainer2/SubViewportContainer"]
+unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(520, 520)
 render_target_update_mode = 4
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="HBoxContainer/MarginContainer2/SubViewportContainer/SubViewport"]
-mesh = SubResource("PrismMesh_5082n")
-script = ExtResource("1_chyhi")
-
-[node name="Camera3D" type="Camera3D" parent="HBoxContainer/MarginContainer2/SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/MarginContainer2/SubViewportContainer/ModelViewport"]
 transform = Transform3D(1, 0, 0, 0, 0.804054, 0.594556, 0, -0.594556, 0.804054, 0, 2, 3)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HBoxContainer/MarginContainer2/SubViewportContainer/SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HBoxContainer/MarginContainer2/SubViewportContainer/ModelViewport"]
 transform = Transform3D(0.379255, -0.523144, -0.763208, 0.651662, -0.434554, 0.621692, -0.656889, -0.733133, 0.176106, 0, 0, 0)
-
-[node name="Label" type="Label" parent="HBoxContainer"]
-layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -78,6 +73,7 @@ theme_override_constants/margin_bottom = 15
 layout_mode = 2
 
 [node name="NameLabel" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Unit Name
 "
@@ -91,10 +87,12 @@ color = Color(0.47451, 0.47451, 0.47451, 1)
 layout_mode = 2
 
 [node name="FactionField" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section1" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
 layout_mode = 2
 FieldName = "Faction"
 
 [node name="JobField" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section1" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
 layout_mode = 2
 FieldName = "Job"
 
@@ -111,23 +109,28 @@ layout_mode = 2
 text = "Stats
 "
 
-[node name="Field3" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+[node name="HpLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
 layout_mode = 2
 FieldName = "Hp"
 
-[node name="Field6" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+[node name="ArmourLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
 layout_mode = 2
 FieldName = "Armour"
 
-[node name="Field7" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+[node name="ResistanceLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
 layout_mode = 2
 FieldName = "Resistance"
 
-[node name="Field4" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+[node name="DamageLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
 layout_mode = 2
 FieldName = "Damage"
 
-[node name="Field5" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+[node name="SpeedLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
 layout_mode = 2
 FieldName = "Speed"
 
@@ -140,6 +143,7 @@ color = Color(0.47451, 0.47451, 0.47451, 1)
 layout_mode = 2
 
 [node name="AbilityLabel" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Spell"
 
@@ -147,11 +151,13 @@ text = "Spell"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
+[node name="AbilityIcon" type="TextureRect" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("3_oprdc")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
+[node name="AbilityDescription" type="RichTextLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4

@@ -1,0 +1,165 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqyu0fppyka8w"]
+
+[ext_resource type="Script" path="res://scene/ui/unit_info_panel.gd" id="1_14p1g"]
+[ext_resource type="PackedScene" uid="uid://c1bfpq570ngsc" path="res://scene/ui/info_field.tscn" id="2_suwti"]
+[ext_resource type="Texture2D" uid="uid://cyw3l12o8grdo" path="res://ui_sprites/icons/snake_ico.png" id="3_oprdc"]
+
+[node name="UnitInfoPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14p1g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ModelViewport" type="SubViewport" parent="HBoxContainer/MarginContainer2/SubViewportContainer"]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(520, 520)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="HBoxContainer/MarginContainer2/SubViewportContainer/ModelViewport"]
+transform = Transform3D(1, 0, 0, 0, 0.804054, 0.594556, 0, -0.594556, 0.804054, 0, 2, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="HBoxContainer/MarginContainer2/SubViewportContainer/ModelViewport"]
+transform = Transform3D(0.379255, -0.523144, -0.763208, 0.651662, -0.434554, 0.621692, -0.656889, -0.733133, 0.176106, 0, 0, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Unit Name
+"
+
+[node name="Divider" type="ColorRect" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.47451, 0.47451, 0.47451, 1)
+
+[node name="Section1" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FactionField" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section1" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
+layout_mode = 2
+FieldName = "Faction"
+
+[node name="JobField" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section1" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
+layout_mode = 2
+FieldName = "Job"
+
+[node name="Divider2" type="ColorRect" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.47451, 0.47451, 0.47451, 1)
+
+[node name="Section2" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="StatsLabel" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2"]
+layout_mode = 2
+text = "Stats
+"
+
+[node name="HpLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
+layout_mode = 2
+FieldName = "Hp"
+
+[node name="ArmourLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
+layout_mode = 2
+FieldName = "Armour"
+
+[node name="ResistanceLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
+layout_mode = 2
+FieldName = "Resistance"
+
+[node name="DamageLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
+layout_mode = 2
+FieldName = "Damage"
+
+[node name="SpeedLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section2" instance=ExtResource("2_suwti")]
+unique_name_in_owner = true
+layout_mode = 2
+FieldName = "Speed"
+
+[node name="Divider3" type="ColorRect" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+color = Color(0.47451, 0.47451, 0.47451, 1)
+
+[node name="Section3" type="VBoxContainer" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AbilityLabel" type="Label" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Spell"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AbilityIcon" type="TextureRect" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_oprdc")
+
+[node name="AbilityDescription" type="RichTextLabel" parent="HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/Section3/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+text = "does some amount of [color=\"fuchsia\"]boosted damage[/color]"
+fit_content = true
+scroll_active = false

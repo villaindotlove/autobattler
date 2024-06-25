@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=4 format=3 uid="uid://dmfvdtnparuxx"]
+
+[ext_resource type="Resource" uid="uid://q08fhdf8q8vh" path="res://resource/snake/water_spell.tres" id="1_iyhy6"]
+[ext_resource type="Texture2D" uid="uid://dcbgihv3yi7ql" path="res://ui_sprites/icons/wise_mage.png" id="1_o70kj"]
+[ext_resource type="Script" path="res://resource/Unit.gd" id="1_uam1b"]
+
+[resource]
+script = ExtResource("1_uam1b")
+Name = "Wise Mage"
+Icon = ExtResource("1_o70kj")
+Health = 400
+BaseDamage = 50.0
+BaseSpeed = 2.0
+BaseArmour = 10.0
+BaseResist = 5.0
+ActiveSpell = ExtResource("1_iyhy6")

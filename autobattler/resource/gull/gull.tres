@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://r4lrltl3mj62"]
+
+[ext_resource type="Resource" uid="uid://bjfijm2lrgwdy" path="res://resource/gull/gull_spell.tres" id="1_7c7rf"]
+[ext_resource type="Script" path="res://resource/Unit.gd" id="1_jd4yh"]
+[ext_resource type="Texture2D" uid="uid://cdypscb2sgk13" path="res://ui_sprites/icons/gull.png" id="1_ypyb0"]
+[ext_resource type="PackedScene" uid="uid://bbox7axmopk0t" path="res://resource/gull/gull.glb" id="3_8tp5x"]
+
+[resource]
+script = ExtResource("1_jd4yh")
+Name = "Gull"
+Icon = ExtResource("1_ypyb0")
+Health = 450
+BaseDamage = 50.0
+BaseSpeed = 0.8
+BaseArmour = 10.0
+BaseResist = 5.0
+AttackRange = 5.0
+Model = ExtResource("3_8tp5x")
+ActiveSpell = ExtResource("1_7c7rf")

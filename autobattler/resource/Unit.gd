@@ -9,6 +9,7 @@ extends Resource
 @export var BaseSpeed = 2.0
 @export var BaseArmour = 10.0
 @export var BaseResist = 5.0
+@export var AttackRange = 1.0
 
 @export var Model: PackedScene
 @export var ActiveSpell: Spell

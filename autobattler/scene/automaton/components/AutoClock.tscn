@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cayfix8f526ju"]
+
+[ext_resource type="Script" path="res://scene/automaton/components/AutoClock.gd" id="1_pfwto"]
+
+[node name="AutoClock" type="Node"]
+script = ExtResource("1_pfwto")

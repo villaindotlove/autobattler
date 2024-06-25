@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=4 format=3 uid="uid://dutr24rrmo88p"]
+
+[ext_resource type="Texture2D" uid="uid://c5y6iyf6w8vy5" path="res://ui_sprites/icons/bear.png" id="1_mxj1h"]
+[ext_resource type="Script" path="res://resource/Unit.gd" id="1_tpfuk"]
+[ext_resource type="PackedScene" uid="uid://bwshh4okbea6r" path="res://resource/bear/bear.glb" id="2_y571x"]
+
+[resource]
+script = ExtResource("1_tpfuk")
+Name = "Bear"
+Icon = ExtResource("1_mxj1h")
+Health = 800
+BaseDamage = 70.0
+BaseSpeed = 1.2
+BaseArmour = 20.0
+BaseResist = 20.0
+AttackRange = 1.0
+Model = ExtResource("2_y571x")

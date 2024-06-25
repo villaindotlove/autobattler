@@ -1,4 +1,5 @@
 @tool 
+class_name UnitInfoField
 extends HBoxContainer
 
 @onready var _field_label = %FieldName

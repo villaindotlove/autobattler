@@ -1,0 +1,6 @@
+D:\gamedev\autobattler\autobattler\.godot\mono\temp\obj\Debug\Autobattler.csproj.AssemblyReference.cache
+D:\gamedev\autobattler\autobattler\.godot\mono\temp\obj\Debug\Autobattler.GeneratedMSBuildEditorConfig.editorconfig
+D:\gamedev\autobattler\autobattler\.godot\mono\temp\obj\Debug\Autobattler.AssemblyInfoInputs.cache
+D:\gamedev\autobattler\autobattler\.godot\mono\temp\obj\Debug\Autobattler.AssemblyInfo.cs
+D:\gamedev\autobattler\autobattler\.godot\mono\temp\obj\Debug\Autobattler.csproj.CoreCompileInputs.cache
+D:\gamedev\autobattler\autobattler\.godot\mono\temp\obj\Debug\Autobattler.sourcelink.json

@@ -1,5 +1,6 @@
 class_name Spell extends Resource
 
+@export var Name: String
 @export var Cost: int
 @export var Damage: int
 @export var Healing: int

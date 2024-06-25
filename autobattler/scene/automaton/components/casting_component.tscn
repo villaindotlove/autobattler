@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmxcqk46lyx82"]
+
+[ext_resource type="Script" path="res://scene/automaton/components/CastingComponent.gd" id="1_6agb3"]
+[ext_resource type="Resource" uid="uid://q08fhdf8q8vh" path="res://resource/snake/water_spell.tres" id="2_ov7ey"]
+
+[node name="CastingComponent" type="Node"]
+script = ExtResource("1_6agb3")
+ActiveSpell = ExtResource("2_ov7ey")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://m5gc3ejr0osh"]
+
+[ext_resource type="Script" path="res://scene/automaton/components/ComponentManager.gd" id="1_8iq71"]
+[ext_resource type="PackedScene" uid="uid://cayfix8f526ju" path="res://scene/automaton/components/AutoClock.tscn" id="2_spr7c"]
+
+[node name="ComponentManager" type="Node"]
+script = ExtResource("1_8iq71")
+
+[node name="AutoClock" parent="." instance=ExtResource("2_spr7c")]

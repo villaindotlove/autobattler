@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4tu1g37h652e"]
+
+[ext_resource type="Script" path="res://scene/automaton/components/AttackComponent.gd" id="1_lkgf8"]
+
+[node name="AttackComponent" type="Node"]
+script = ExtResource("1_lkgf8")

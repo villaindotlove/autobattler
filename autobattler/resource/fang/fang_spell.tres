@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=2 format=3 uid="uid://drr52uirqoqrr"]
+
+[ext_resource type="Script" path="res://resource/Spell.gd" id="1_0wstq"]
+
+[resource]
+script = ExtResource("1_0wstq")
+Name = "Thirst for Violence"
+Cost = 50
+Damage = 0
+Healing = 0
+MissileSpeed = 0.0
+Pierce = 0
+Buffs = []
+Debuffs = []
+Duration = 0.0
+TargetingFunction = 5
+MovementFunction = 2
+Description = ""

@@ -1,19 +1,5 @@
-res://models/wise_mage/attack.res
-res://models/wise_mage/cast.res
-res://models/wise_mage/move.res
-res://models/wise_mage/wise mage_Cube_002.res
-res://models/wise_mage/wise mage_Cube_001.res
-res://models/wise_mage/wise mage_Cone.res
-res://models/wise_mage/wise mage_Cylinder.res
-res://models/wise_mage/wise mage_Cube.res
-res://models/wise_mage/animations/attack.res
-res://models/wise_mage/animations/cast.res
-res://models/wise_mage/animations/move.res
-res://models/wise_mage/mesh/wise mage arms.res
-res://models/wise_mage/mesh/wise mage beard.res
-res://models/wise_mage/mesh/wise mage hat.res
-res://models/wise_mage/mesh/wise mage staff.res
-res://models/wise_mage/mesh/wise mage robe.res
+res://scene/automaton/components/component_manager.tscn
 res://material/spell_shaders/water_spout.tres
 res://material/spell_shaders/runic_ring.tres
 res://material/spell_shaders/low_poly_pillar.tres
+res://scene/board/tile.tscn

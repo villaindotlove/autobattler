@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Unit" load_steps=5 format=3 uid="uid://de81sipehkl8x"]
+
+[ext_resource type="Resource" uid="uid://drr52uirqoqrr" path="res://resource/fang/fang_spell.tres" id="1_0psem"]
+[ext_resource type="Script" path="res://resource/Unit.gd" id="1_n3abp"]
+[ext_resource type="Texture2D" uid="uid://7sy5g2ekmv1w" path="res://ui_sprites/icons/fang.png" id="2_atscj"]
+[ext_resource type="PackedScene" uid="uid://ccb43nxf26kth" path="res://resource/fang/fang.glb" id="3_gqow3"]
+
+[resource]
+script = ExtResource("1_n3abp")
+Name = "Fang"
+Icon = ExtResource("2_atscj")
+Health = 600
+BaseDamage = 50.0
+BaseSpeed = 1.0
+BaseArmour = 10.0
+BaseResist = 10.0
+AttackRange = 1.0
+Model = ExtResource("3_gqow3")
+ActiveSpell = ExtResource("1_0psem")

@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cloc66al7j0c4"]
+[gd_scene load_steps=5 format=3 uid="uid://ceenwwuggnbxy"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_qjrso"]
 [ext_resource type="PackedScene" uid="uid://bgoh6a1lrox41" path="res://scene/automaton/automaton.tscn" id="2_1587d"]
-[ext_resource type="PackedScene" uid="uid://c15femrcvavku" path="res://scene/projectiles/attack/snake_auto_attack.tscn" id="4_unhrp"]
+[ext_resource type="PackedScene" uid="uid://c15femrcvavku" path="res://scene/attacks/snake_auto_attack.tscn" id="4_unhrp"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_sbaxd"]
 

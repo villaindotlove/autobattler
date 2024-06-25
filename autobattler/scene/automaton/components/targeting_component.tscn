@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tebt7xmpp2ao"]
+
+[ext_resource type="Script" path="res://scene/automaton/components/TargetingComponent.gd" id="1_4fs5j"]
+
+[node name="TargetingComponent" type="Node"]
+script = ExtResource("1_4fs5j")

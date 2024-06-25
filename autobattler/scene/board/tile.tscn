@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhvrbq7qxkvgu"]
 
-[ext_resource type="Script" path="res://scene/board/tile.gd" id="1_pso80"]
+[ext_resource type="Script" path="res://script/board/Tile.cs" id="1_p267f"]
 [ext_resource type="PackedScene" uid="uid://cn8vrpai8cn6w" path="res://scene/ui/drag_3d_units/drop_platform.tscn" id="2_e1wup"]
 [ext_resource type="Script" path="res://scene/board/DragPanel.gd" id="3_53rew"]
 
@@ -12,7 +12,7 @@ viewport_path = NodePath("SubViewport")
 
 [node name="Tile" type="MeshInstance3D"]
 mesh = SubResource("BoxMesh_fpb1m")
-script = ExtResource("1_pso80")
+script = ExtResource("1_p267f")
 
 [node name="Platform" parent="." instance=ExtResource("2_e1wup")]
 
